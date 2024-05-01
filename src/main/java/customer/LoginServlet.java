@@ -40,6 +40,7 @@ public class LoginServlet extends HttpServlet {
         }
         else {
             System.out.println("customer is null");
+            response.sendRedirect("index.jsp");
         }
 
     }
