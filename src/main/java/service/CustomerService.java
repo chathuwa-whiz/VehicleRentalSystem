@@ -16,7 +16,7 @@ public class CustomerService {
     private static PreparedStatement preparedStatement;
     private static Statement statement;
     private static ResultSet resultSet;
-    private static Customer customer;
+    public static Customer customer; // public, because we can delete this customer object when user delete account
     private static int rowCount;
 
     public static int addCustomer(Customer customer) {
@@ -129,7 +129,7 @@ public class CustomerService {
                 System.out.println("Customer Updated Successfully");
             }
             else {
-                System.out.println("No Customer found with ID " + customer.getId());
+                System.out.println("No Customer found with Username " + customer.getUserName());
             }
 
         }

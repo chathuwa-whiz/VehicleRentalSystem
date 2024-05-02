@@ -24,6 +24,7 @@ public class DeleteCustomerServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.removeAttribute("name");
             session.removeAttribute("customer");
+            CustomerService.customer = null;
 
             // Redirect back to the login page
             response.sendRedirect("index.jsp");

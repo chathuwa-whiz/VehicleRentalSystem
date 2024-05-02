@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
     <link rel="stylesheet" href="../css/signing.css">
+    <link rel="stylesheet" href="../css/navbar.css">
 </head>
 <body>
+<%--header--%>
+<nav>
+    <div class="nav-links">
+        <ul>
+            <strong>
+                <b>
+                    <div id="li-first">
+                        <li><a class="an" href="#" class="home">HOME</a></li>
+                        <li><a class="an" href="#">Rental Guide</a></li>
+                        <li><a class="an" href="#">Services</a></li>
+                        <li><a class="an" href="#">Feedback</a></li>
+                        <li><a class="an" href="#">Contact Us</a></li>
+                    </div>
+
+                    <li><a href="Admin_Login.php"><button>Login</button></a></li>
+                </b>
+            </strong>
+        </ul>
+    </div>
+</nav>
+
+<%--form--%>
 <div class="container">
     <h1>User Registration</h1>
     <form id="registrationForm" action="../register" method="post">

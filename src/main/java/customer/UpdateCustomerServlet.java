@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.Customer;
 import service.CustomerService;
 
@@ -31,7 +32,9 @@ public class UpdateCustomerServlet extends HttpServlet {
         int rowCount = CustomerService.updateCustomer(customer);
 
         if(rowCount > 0) {
-            // new customer added successfully
+            // remove session
+            HttpSession session = request.getSession();
+            session.removeAttribute("name");
             response.sendRedirect("index.jsp");
 //            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         }
