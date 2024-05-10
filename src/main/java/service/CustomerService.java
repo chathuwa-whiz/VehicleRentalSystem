@@ -64,11 +64,14 @@ public class CustomerService {
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement("SELECT * FROM customers WHERE email = ? AND password = ?");
 
+            System.out.println("Email : "+email);
+            System.out.println("Password : "+password);
+
             // set values
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
 
-            //execute query
+            // execute query
             resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
